@@ -19,19 +19,19 @@ const CategoryInputs = ({variant}) => {
   return (
     <div className={`${containerClasses} text-black font-mono`}>
       <div className={`${inputClasses}`}>
-        <input type="radio" id="restaurants-category" name="restaurants-category" value="restaurants" 
+        <input type="radio" id="restaurants-category" name="category" value="restaurants" 
         onChange={e => setCategory(e.target.value)} />
         <label className="px-1" htmlFor="restaurants-category">Restaurants</label>
       </div>
 
       <div className={`${inputClasses}`}>
-        <input type="radio" id="events-category" name="events-category" value="events" 
+        <input type="radio" id="events-category" name="category" value="events" 
         onChange={e => setCategory(e.target.value)} />
         <label className="px-1" htmlFor="events-category">Events</label>
       </div>
 
       <div className={`${inputClasses}`}>
-        <input type="radio" id="services-category" name="services-category" value="services" 
+        <input type="radio" id="services-category" name="category" value="services" 
         onChange={e => setCategory(e.target.value)} />
         <label className="px-1" htmlFor="services-category">Services</label>
       </div>
