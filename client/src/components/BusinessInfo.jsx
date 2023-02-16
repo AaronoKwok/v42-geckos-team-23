@@ -17,10 +17,14 @@ const BusinessInfo = ({ id }) => {
     const map = useRef(null)
 
     useEffect(() => {
-        getDetailsByIdFromYelpApi(id)
-            .then(data => {
+        let getInfo = async () => {
+            try {
+                const response = await fetch('/.netlify/functions/getDetails', {
+                    method: 'POST', 
+                    body: JSON.stringify({ id })
+                })
+                const data = await response.json()
                 setDetails({ ...data })
-
                 let lng = data.coordinates.longitude
                 let lat = data.coordinates.latitude
                 if (map.current) return;
@@ -30,8 +34,11 @@ const BusinessInfo = ({ id }) => {
                     center: [lng, lat],
                     zoom: 17
                 })
-            })
-            .catch(err => console.log(err))
+            } catch (err) {
+                err => console.log(err)
+            }
+        }
+        getInfo()
     }, [])
 
     return (
