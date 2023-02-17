@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import ArrowButton from '../components/ArrowButton'
 import Reviews from '../components/Reviews'
 import BusinessInfo from '../components/BusinessInfo'
-import BusinessPhotos from '../components/BusinessPhtos'
+import BusinessPhotos from '../components/BusinessPhotos'
 import { InputProvider } from '../contexts/InputProvider'
 
 const Details = () => {
