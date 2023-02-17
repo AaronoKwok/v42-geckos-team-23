@@ -1,9 +1,10 @@
 [build]
-  command = "# no build command"
-  functions = "netlify/functions"
-  publish = ""
+  base ="client/"
+  command = "npm run build"
+  functions = "/netlify/netlify/functions"
+  publish = "client"
 
-[function]
+[functions]
   node_bundler = "esbuild"
 
 # Uncomment to use this redirect for Single Page Applications like create-react-app.
