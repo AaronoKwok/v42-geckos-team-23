@@ -49,6 +49,8 @@ const Navbar = () => {
         e.preventDefault()
         ctx.setIsLoading(true)
 
+        console.log("getBusiness triggered")
+
         try {
             const response = await fetch('/.netlify/functions/getBusinesses', {
                 method: 'POST', 
@@ -57,6 +59,7 @@ const Navbar = () => {
                     category: categoryName
                 })
             })
+            console.log(response)
             const data = await response.json()
             ctx.setResultsList([...data])
             ctx.setResultsTitle(categoryName)
